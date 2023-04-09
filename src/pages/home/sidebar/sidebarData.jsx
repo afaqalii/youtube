@@ -41,40 +41,4 @@ export const sideBarData = [
       item: "Sports",
       icon: <FaHome/>
     },
-    {
-      item: "Home",
-      icon: <FaHome/>
-    },
-    {
-      item: "Browse Channels",
-      icon: <FaHome/>
-    },
-    {
-      item: "Settings",
-      icon: <FaHome/>
-    },
-    {
-      item: "Report History",
-      icon: <FaHome/>
-    },
-    {
-      item: "Help",
-      icon: <FaHome/>
-    },
-    {
-      item: "Browse Channels",
-      icon: <FaHome/>
-    },
-    {
-      item: "Settings",
-      icon: <FaHome/>
-    },
-    {
-      item: "Report History",
-      icon: <FaHome/>
-    },
-    {
-      item: "Help",
-      icon: <FaHome/>
-    },
   ]

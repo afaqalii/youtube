@@ -5,7 +5,7 @@ import VideoCard from '../../../Components/VideoCard/VideoCard'
 const FeedSection = () => {
   const [feed, setFeed] = useState()
   useEffect(() => {
-    fetchDataFromApi(`search/?q=gaming`)
+    fetchDataFromApi(`search/?q=music`)
       .then((res) => { 
        setFeed(res.contents)
       })
