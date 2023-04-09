@@ -9,18 +9,18 @@ const SideBar = () => {
     const  sidebarItem = sideBarData.map((category, index) => { 
             const {item, icon} = category
             return (
-               <div className="items">
-                  <div className="item" onClick={() => dispatch(getCategory(item))} key={index}>
+                  <div className="item" key={index} onClick={() => dispatch(getCategory(item))}>
                      <div className="icon" style={{fontSize:"24px"}}>{icon}</div>
                      <div className="listItem"><li>{item}</li></div>
                   </div>
-               </div>
             )
  }) 
 
   return (
     <div className='sidebar'>
+      <div className="items">
         {sidebarItem}
+      </div>
     </div>
   )
 }

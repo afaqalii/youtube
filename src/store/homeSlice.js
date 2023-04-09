@@ -10,6 +10,6 @@ export const homeSlice = createSlice({
           state.category = action.payload
         }
     }
-})
+})  
 export const {getCategory} = homeSlice.actions
 export default homeSlice.reducer

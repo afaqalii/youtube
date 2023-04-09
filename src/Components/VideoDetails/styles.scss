@@ -1,0 +1,41 @@
+.videoDetailContainer {
+    .videoDetailWrapper {
+        display: flex;
+        width: 90%;
+        margin: 0 auto;
+    .videoPlayerLeft {
+        width: 100%;
+        display: flex;
+        height: 540px;
+    .videoPlayerContainer {
+        width: 996px;
+        }
+        .videoDetailContent {
+            border: 1px solid black;
+            .videoDetailInfo {
+                display: flex;
+            border: 1px solid black; 
+                justify-content: space-between;
+                .videoDetailChannelInfo {
+                    display: flex;
+                }
+            }
+        }
+    }
+    .videoPlayerRigth {
+         width: 30%;
+         .relatedVideoContainer {
+            .relatedVideo {
+                display: flex;
+                .relatedVideoRigth {
+                    .relatedVideoContent {
+                        .relatedVideoStats {
+                            display: flex;
+                        }
+                    }
+                }
+            }
+         }
+    }
+}
+}
