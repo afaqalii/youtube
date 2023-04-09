@@ -1,0 +1,18 @@
+@import "../../../mixins.scss";
+
+.sidebar {
+    .items {
+        .item {
+        display: flex;
+        align-items:center;
+        gap: 20px;
+        padding: 5px 30px;
+        cursor: pointer;
+            li {
+                list-style: none;
+                font-size: 14px;
+                font-weight: bold;
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+$youtubeGray:#F8F8F8;
+$youtubeBlue:#5D8BDF;
+$youtubeLigthGray:#D8D8D8;
+@mixin displayFlex {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}

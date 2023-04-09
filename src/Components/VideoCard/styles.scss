@@ -1,0 +1,32 @@
+@import "../../mixins.scss";
+.videoCard {
+    width: 320px;
+    .videoImg {
+        width: 350px;
+        img {
+            width: 100%;
+        }
+    }
+    .videoContent {
+        display: flex;
+        .channelLogo {
+            width: 70px;
+            img {
+                width: 100%;
+            }
+        }
+        .videoContentText {
+            h3 {
+                font-size: 14px;
+            }
+            p {
+                font-size: 12px;
+                color:$youtubeLigthGray;
+            }
+            .videoInfo {
+                display: flex;
+                gap: 5px;
+            }
+        }
+    }
+}
