@@ -1,31 +1,54 @@
 @import "../../mixins.scss";
+a {
+    text-decoration: none;
+    color: black;
+}
 .videoCard {
     width: 320px;
-    .videoImg {
-        width: 350px;
-        img {
-            width: 100%;
-        }
+
+    .videoImg{
+        position: relative;
+        img{
+         width: 100%;
+         border-radius: 10px;
+         -webkit-border-radius: 10px;
+         -moz-border-radius: 10px;
+         -ms-border-radius: 10px;
+         -o-border-radius: 10px;
+         }
+         .videoTime {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            color: #ffff;
+            background-color: black;
+            padding: 5px;
+         }
     }
     .videoContent {
         display: flex;
+        padding-top: 10px;
+        gap: 10px;
         .channelLogo {
             width: 70px;
-            img {
+            img{
                 width: 100%;
+                border-radius: 50%;
             }
         }
         .videoContentText {
             h3 {
                 font-size: 14px;
+                padding-bottom: 5px;
             }
             p {
                 font-size: 12px;
-                color:$youtubeLigthGray;
+                color:$youtubeDarkGray;
             }
             .videoInfo {
                 display: flex;
                 gap: 5px;
+                padding: 3px 0;
             }
         }
     }
