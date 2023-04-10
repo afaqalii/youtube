@@ -1,12 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {FaBars, FaRegUser, FaSearch} from "react-icons/fa"
 import {BsThreeDotsVertical} from "react-icons/bs"
 import youtubeLogo from "../../assets/youtubeLogo.jpg"
 import "./styles.scss"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 const Navbar = () => {
+   
+  const [searchedQuery, setSearchedQuery] = useState()
+  const naviagte = useNavigate()
+  const searchHanlder = (e) => {
+     if(e.key === "Enter" && searchedQuery.length > 0) {
+        naviagte(`/search/${searchedQuery}`)
+     }
+  }
+
+  
   return (
     <section className='navbar'>
         <div className="navbarLeft left">
@@ -18,7 +28,11 @@ const Navbar = () => {
         </div>
         <div className="navbarMiddle middle">
           <div className="inputField">
-            <input type="text" placeholder='Search' />
+            <input 
+               type="text" 
+               placeholder='Search' 
+               onChange={(e) => setSearchedQuery(e.target.value)}
+               onKeyUp={searchHanlder} />
             <div className="searchButton">
             <FaSearch/>
             </div>
