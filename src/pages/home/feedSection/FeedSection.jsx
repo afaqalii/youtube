@@ -10,6 +10,7 @@ const FeedSection = () => {
     fetchDataFromApi(`search/?q=${category}`)
       .then((res) => { 
        setFeed(res.contents)
+       console.log(res.contents)
       })
       .catch((err) => console.log(err))
   },[category])
@@ -22,8 +23,10 @@ const FeedSection = () => {
 
   return (
     <div className='feedSection'>
-      <div className="container">
+      <div className="wrapper">
+        <div className="container">
         {RenderedFeed}
+        </div>
       </div>
     </div>
   )

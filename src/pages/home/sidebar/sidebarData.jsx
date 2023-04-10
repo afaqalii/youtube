@@ -1,44 +1,44 @@
-import {FaHome} from "react-icons/fa"
-import {AiFillThunderbolt, AiFillPlaySquare} from "react-icons/ai"
+import {GrHomeRounded} from "react-icons/gr"
+import {AiOutlineThunderbolt, AiOutlinePlaySquare} from "react-icons/ai"
 export const sideBarData = [
     {
       item: "Home",
-      icon: <FaHome/>
+      icon: <GrHomeRounded/>
     },
     {
       item: "Shorts",
-      icon: <AiFillThunderbolt/>
+      icon: <AiOutlineThunderbolt/>
     },
     {
       item: "Subscriptions",
-      icon: <AiFillPlaySquare/>
+      icon: <AiOutlinePlaySquare/>
     },
     {
       item: "Library",
-      icon: <AiFillPlaySquare/>
+      icon: <AiOutlinePlaySquare/>
     },
     {
       item: "History",
-      icon: <FaHome/>
+      icon: <AiOutlinePlaySquare/>
     },
     {
       item: "Trending",
-      icon: <FaHome/>
+      icon: <AiOutlineThunderbolt/>
     },
     {
       item: "Music",
-      icon: <FaHome/>
+      icon: <AiOutlinePlaySquare/>
     },
     {
       item: "Gaming",
-      icon: <FaHome/>
+      icon: <AiOutlineThunderbolt/>
     },
     {
       item: "News",
-      icon: <FaHome/>
+      icon: <AiOutlineThunderbolt/>
     },
     {
       item: "Sports",
-      icon: <FaHome/>
+      icon: <AiOutlineThunderbolt/>
     },
   ]

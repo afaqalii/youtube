@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import ReactPlayer from 'react-player'
 import { Link, useParams } from 'react-router-dom'
+import {HiOutlineThumbUp} from "react-icons/hi"
+import {FaShare} from "react-icons/fa"
+import {FiDownload} from 'react-icons/fi'
 import "./styles.scss"
 import { fetchDataFromApi } from '../../apis/api'
 const VideoDetails = () => {
@@ -11,11 +14,12 @@ const VideoDetails = () => {
        getVideosDetails()
        getRelatedVideos()
        
-   },[])
+   },[videoId])
    const getVideosDetails = async () => {
      await fetchDataFromApi(`video/details/?id=${videoId}`)
         .then((res) => {
           setVideoDetails(res)
+          console.log(res)
         })
    }
    const getRelatedVideos = () => {
@@ -64,6 +68,7 @@ const VideoDetails = () => {
           height="100%"
           playing={true}
         />
+       </div>
         <div className="videoDetailContent">
           <h2>{videoDetails?.title}</h2>
           <div className="videoDetailInfo">
@@ -77,15 +82,27 @@ const VideoDetails = () => {
               </div>
             </div>
               <div className="videoDetailStats">
+                <div className="statsBtn likes">
+                  <HiOutlineThumbUp className='likeIcon'/>
                 <button>
                   {videoDetails?.stats?.likes}
                 </button>
+                </div>
+                <div className="statsBtn likes">
+                  <FaShare className='likeIcon'/>
                 <button>
+                  Share
                 </button>
+                </div>
+                <div className="statsBtn likes">
+                  <FiDownload className='likeIcon'/>
+                <button>
+                  Download
+                </button>
+                </div>
               </div>
           </div>
         </div>
-       </div>
        </div>
        <div className="videoPlayerRigth">
        <div className="relatedVideoContainer">

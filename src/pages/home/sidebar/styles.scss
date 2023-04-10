@@ -1,12 +1,16 @@
 @import "../../../mixins.scss";
 
 .sidebar {
+    width: 15%;
     .items {
         .item {
         display: flex;
         align-items:center;
-        gap: 20px;
-        padding: 5px 30px;
+        gap: 30px;
+        border-radius: 10px;
+        // background-color: $youtubeDarkGray;
+        padding: 12px;
+        margin: 10px;
         cursor: pointer;
             li {
                 list-style: none;
