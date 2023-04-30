@@ -48,7 +48,7 @@ const VideoDetails = () => {
                 <h4>{video?.title}</h4>
                 <p>{video?.author?.title}</p>
                 <div className="relatedVideoStats">
-                  <p>{video?.stats?.views} Views</p>
+                  <p>{video?.stats?.views}  Views</p>
                   <p>{video?.publishedTimeText}</p>
                 </div>
               </div>
