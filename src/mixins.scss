@@ -7,3 +7,33 @@ $youtubeDarkGray:#858585;
    align-items: center;
    justify-content: space-between;
 }
+
+@mixin sm-screen {
+    @media only screen and (min-width:640px) {
+      @content;
+    }
+}
+
+@mixin md-screen {
+   @media only screen and (min-width:778px) {
+      @content; 
+   }
+}
+
+@mixin lg {
+   @media only screen and (min-width: 1024px) {
+       @content;
+   }
+}
+
+@mixin xl {
+   @media only screen and (min-width: 1280px) {
+       @content;
+   }
+}
+
+@mixin xxl {
+   @media only screen and (min-width: 1536px) {
+       @content;
+   }
+}

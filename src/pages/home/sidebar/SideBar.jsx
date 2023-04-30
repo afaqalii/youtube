@@ -1,27 +1,67 @@
-import React from 'react'
-import { sideBarData } from './sidebarData'
+import React, { useEffect, useState } from 'react'
+import {categories} from "./sidebarData"
 import "./styles.scss"
 import { useDispatch, useSelector } from 'react-redux'
 import { getCategory } from '../../../store/homeSlice'
 const SideBar = () => {
-
    const dispatch = useDispatch()
-    const  sidebarItem = sideBarData.map((category, index) => { 
-            const {item, icon} = category
+   const [isLargeScreen, setisLargeScreen] = useState(null)
+   const {  sidebarState }  = useSelector(state => state.home)
+   const [sidebarItemActive, setSidebarItemActive] = useState(true)
+   const handleSidebarItem = (name) => {
+    dispatch(getCategory(name))
+
+  }
+    const  sidebarItem = categories.map((category, index) => { 
+            const {name, icon} = category
+            
             return (
-                  <div className="item" key={index} onClick={() => dispatch(getCategory(item))}>
+                  <div className={`${sidebarItemActive ? "item active":"item"}`} key={index} onClick={() => handleSidebarItem(name)}>
                      <div className="icon" style={{fontSize:"24px"}}>{icon}</div>
-                     <div className="listItem"><li>{item}</li></div>
+                     <div className="listItem"><li>{name}</li></div>
                   </div>
             )
- }) 
-
+    })
+   const onlyMobileItems = categories.filter((item) => {
+    return  item.type !== "menu"
+   })
+   const mobileViewSidebar = onlyMobileItems.map((category, index) => {
+      const { name } = category
+      return (
+      <div 
+        className="mobile-view-item"
+        key={index}
+        onClick={() => dispatch(getCategory(name))}
+        >
+        {name}
+       </div>
+      )
+      })
+      useEffect(() => {
+         const handleSize = () => {
+          window.innerWidth > 768 ?  setisLargeScreen(true) :  setisLargeScreen(false)
+         }
+         window.addEventListener("resize", handleSize)
+         return  () => {
+             window.removeEventListener("resize", handleSize)
+         }
+      },[])
   return (
-    <div className='sidebar'>
-      <div className="items">
-        {sidebarItem}
-      </div>
+    <>
+    {
+      // isLargeScreen 
+      window.innerWidth > 768
+      ? <div className={`${sidebarState ? "sidebar hideSidebar" : "sidebar"}`}  >
+         <div className="items">
+         {sidebarItem}
+         </div>
+        </div>
+      :  
+      <div className="mobile-view-items">
+      {mobileViewSidebar}
     </div>
+    }
+    </>
   )
 }
 

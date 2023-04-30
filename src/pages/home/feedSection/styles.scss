@@ -1,14 +1,34 @@
+@import "../../../mixins.scss";
+.feedSectionContainer {
+    display: grid;
+    place-items: center;
+    width: 100%;
+.loaderr {
+    margin: 0 auto;
+}
 .feedSection {
-    width: 85%;
-    max-width: 85%;
+    width: 100%;
+    // max-width: 85%;
+    @include lg {
+        width: 85%;
+    }
     display: flex;
     justify-content: center;
+    margin-top: 30px;
+    // border: 1px solid yellow;
+
     .wrapper {
-        width: 90%;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        
         .container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
+            width: 100%;
+            // add this width = 100% if something is wrong with UI change this width
         }
     }
+}
 }

@@ -1,44 +1,33 @@
-import {GrHomeRounded} from "react-icons/gr"
-import {AiOutlineThunderbolt, AiOutlinePlaySquare} from "react-icons/ai"
-export const sideBarData = [
+import React from "react";
+
+import { AiFillHome, AiOutlineFlag } from "react-icons/ai";
+import { MdLocalFireDepartment, MdLiveTv } from "react-icons/md";
+import { CgMusicNote } from "react-icons/cg";
+import { FiFilm } from "react-icons/fi";
+import { IoGameControllerSharp } from "react-icons/io5";
+import { ImNewspaper } from "react-icons/im";
+import { GiDiamondTrophy, GiEclipse } from "react-icons/gi";
+import { RiLightbulbLine, RiFeedbackLine } from "react-icons/ri";
+import { FiSettings, FiHelpCircle } from "react-icons/fi";
+
+export const categories = [
+    { name: "New", icon: <AiFillHome />, type: "home" },
+    { name: "Trending", icon: <MdLocalFireDepartment />, type: "category" },
+    { name: "Music", icon: <CgMusicNote />, type: "category" },
+    { name: "Films", icon: <FiFilm />, type: "category" },
+    { name: "Live", icon: <MdLiveTv />, type: "category" },
+    { name: "Gaming", icon: <IoGameControllerSharp />, type: "category" },
+    { name: "News", icon: <ImNewspaper />, type: "category" },
+    { name: "Sports", icon: <GiDiamondTrophy />, type: "category" },
+    { name: "Learning", icon: <RiLightbulbLine />, type: "category" },
     {
-      item: "Home",
-      icon: <GrHomeRounded/>
+        name: "Fashion & beauty",
+        icon: <GiEclipse />,
+        type: "category",
+        divider: true,
     },
-    {
-      item: "Shorts",
-      icon: <AiOutlineThunderbolt/>
-    },
-    {
-      item: "Subscriptions",
-      icon: <AiOutlinePlaySquare/>
-    },
-    {
-      item: "Library",
-      icon: <AiOutlinePlaySquare/>
-    },
-    {
-      item: "History",
-      icon: <AiOutlinePlaySquare/>
-    },
-    {
-      item: "Trending",
-      icon: <AiOutlineThunderbolt/>
-    },
-    {
-      item: "Music",
-      icon: <AiOutlinePlaySquare/>
-    },
-    {
-      item: "Gaming",
-      icon: <AiOutlineThunderbolt/>
-    },
-    {
-      item: "News",
-      icon: <AiOutlineThunderbolt/>
-    },
-    {
-      item: "Sports",
-      icon: <AiOutlineThunderbolt/>
-    },
-  ]
+    { name: "Settings", icon: <FiSettings />, type: "menu" },
+    { name: "Report History", icon: <AiOutlineFlag />, type: "menu" },
+    { name: "Help", icon: <FiHelpCircle />, type: "menu" },
+    { name: "Send feedback", icon: <RiFeedbackLine />, type: "menu" },
+];

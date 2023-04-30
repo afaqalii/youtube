@@ -3,10 +3,68 @@
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
+    position: relative;
+    .mobile-view-searchBar {
+        position: absolute;
+        background-color: $youtubeGray;
+        padding: 20px 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        top: 0;
+        left:0;
+        .left-arrow-div {
+            padding: 5px;
+            width: max-content;
+            border-radius: 50%;
+            background-color: $youtubeLigthGray;
+            margin-left: 10px;
+            .arrow-left {
+                font-size: 24px;
+                border-radius: 50%;
+            }
+        }
+        
+        .mobile-view-input-field  {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $youtubeLigthGray;
+            border-radius: 15px;
+            width: 70%;
+            input {
+                outline: none;
+                background-color: $youtubeLigthGray;
+                padding: 15px;
+                border: none;
+                width: 80%;
+                &::placeholder {
+                    font-size: 18px;
+                    margin-left: -10px
+                }
+            }
+        }
+        
+    } 
+    .de-active-searchbar {
+        display: none;
+    }
     .navbarLeft {
         @include displayFlex;
+        .menu-icons {
+            font-size: 24px;
+            display: none; 
+            @include md-screen {
+                display: block;
+            }
+        }
         .youtubeLogo {
-                width: 140px;
+                width: 136px;
+                margin-left: -20px;
+                @include md-screen {
+                    margin-left: 0;
+                }
             img {
                 width: 100%;
                 height: 100%;
@@ -15,16 +73,25 @@
     }
     .navbarMiddle {
         @include displayFlex;
-        width: 80%;
+        display: none;
+        @include md-screen {
+            display: flex;
+            width: 40%;
+            min-width: 40%;
+            max-width: 30%;
+        }
         .inputField {
-            @include displayFlex;
-            width: 50%;
+          @include displayFlex;
+            width: 100%;
             margin: 0 auto;
-            input {
+            border-radius: 20px;
+            border: 1px solid $youtubeLigthGray;
+        input {
                 width: 100%;
-                padding: 10px 15px;
-                border: .5px solid $youtubeLigthGray;
+                padding: 10px;
                 border-radius: 20px 0 0 20px;
+                outline: none;
+                border: none;
                 -webkit-border-radius: 20px 0 0 20px;
                 -moz-border-radius: 20px 0 0 20px;
                 -ms-border-radius: 20px 0 0 20px;
@@ -32,9 +99,9 @@
 }
         .searchButton {
           background-color: $youtubeGray;
-          padding: 7px 20px;
-          border: .5px solid $youtubeLigthGray;
+          padding: 10px;
           border-radius: 0 20px 20px 0;
+          border: 1px solid $youtubeLigthGray;
           -webkit-border-radius: 0 20px 20px 0;
           -moz-border-radius: 0 20px 20px 0;
           -ms-border-radius: 0 20px 20px 0;
@@ -45,21 +112,49 @@
     }
     .navbarRigth {
         @include displayFlex;
-        gap: 20px;
+        @include md-screen {
+            gap: 5px;
+        }
+        gap: 25px;
+        .navbar-search-icon {
+            font-size: 20px;
+            @include md-screen {
+                display: none;
+            }
+        }
+        .settings-dots { 
+            display: none;
+            @include md-screen {
+                display: flex
+            }
+        }
         .signinButton {
             @include displayFlex;
-                padding: 10px;
-                border:1px solid $youtubeBlue;
-                border-radius:3px;
-                -webkit-border-radius:3px;
-                -moz-border-radius:3px;
-                -ms-border-radius:3px;
-                -o-border-radius:3px;
-            button {
+            gap: 10px;
+            @include md-screen {
+                border-radius: 5px;
+                padding: 10px 15px;
+            }
+            .navbar-user-icon {
+                display: flex;
+                font-size: 20px;
+                @include md-screen {
+                    // display: none;
+                }
+            }
+                padding: 3px;
+                border:1px solid black;
+                border-radius:50%;
+                button {
                 color: $youtubeBlue;
                 background-color: white;
                 border: none;
                 outline: none;
+                display: none;
+
+                @include md-screen {
+                    display: flex;
+                }
 }
         }
     }

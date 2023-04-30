@@ -1,3 +1,11 @@
+@import "../../mixins.scss";
 .home {
     display: flex;
+    gap: 40px;
+    flex-direction: column;
+    position: relative;
+    transition: .3s ease-in-out;
+    @include md-screen {
+        flex-direction: row;
+    }
 }
