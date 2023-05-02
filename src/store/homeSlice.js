@@ -5,7 +5,7 @@ export const homeSlice = createSlice({
     initialState:{
         category:"New",
         sidebarState:false,
-        sidebarItemClicked: false,
+        sidebarItemClicked: true,
     },
     reducers: {
         getCategory:(state, action) => {
@@ -16,9 +16,9 @@ export const homeSlice = createSlice({
         },
         activeItemClick: (state, action) => {
           if(action.payload) {
-            return state.sidebarItemClicked = action.payload
+             state.sidebarItemClicked = action.payload
           }else {
-            return state.sidebarItemClicked = !state.sidebarItemClicked
+             state.sidebarItemClicked = !state.sidebarItemClicked
           }
           
         }

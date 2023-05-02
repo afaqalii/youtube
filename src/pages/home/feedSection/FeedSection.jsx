@@ -20,7 +20,10 @@ const FeedSection = () => {
         setLoading(false)
         dispatch(activeItemClick())
       })
-      .catch((err) => setErr(true))
+      .catch((err) => {
+        console.log(err)
+        setErr(true) 
+      })
   },[category])
   console.log(sidebarItemClicked)
   const RenderFeed = feed?.contents?.map((video, index) => {
