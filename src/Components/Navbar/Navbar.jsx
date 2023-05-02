@@ -6,7 +6,7 @@ import youtubeLogo from "../../assets/youtubeLogo.jpg"
 import "./styles.scss"
 import { Link, useNavigate } from 'react-router-dom'
 import { AiOutlineArrowLeft } from "react-icons/ai"
-import { toggleSidebarState } from '../../store/homeSlice'
+import { activeItemClick, toggleSidebarState } from '../../store/homeSlice'
 
 const Navbar = () => {
    
@@ -42,7 +42,7 @@ const Navbar = () => {
       </div>
         <div className="navbarLeft left">
             <FaBars className='menu-icons' onClick={() => dispatch(toggleSidebarState()) } />
-            <div className="youtubeLogo">
+            <div className="youtubeLogo" onClick={() => dispatch(activeItemClick())}>
                <Link to='/'><img src={youtubeLogo} alt="youtube logo"/></Link>
             </div>
         </div>

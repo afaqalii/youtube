@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {categories} from "./sidebarData"
 import "./styles.scss"
 import { useDispatch, useSelector } from 'react-redux'
-import { getCategory } from '../../../store/homeSlice'
+import { activeItemClick, getCategory } from '../../../store/homeSlice'
 const SideBar = () => {
    const dispatch = useDispatch()
    const [isLargeScreen, setisLargeScreen] = useState(null)
@@ -10,7 +10,7 @@ const SideBar = () => {
    const [sidebarItemActive, setSidebarItemActive] = useState(true)
    const handleSidebarItem = (name) => {
     dispatch(getCategory(name))
-
+    dispatch(activeItemClick())
   }
     const  sidebarItem = categories.map((category, index) => { 
             const {name, icon} = category

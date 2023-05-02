@@ -16,11 +16,14 @@ a {
         position: relative;
         img{
          width: 100%;
-         border-radius: 10px;
+         border-radius: 0px;
          -webkit-border-radius: 10px;
          -moz-border-radius: 10px;
          -ms-border-radius: 10px;
          -o-border-radius: 10px;
+         @include sm-screen {
+            border-radius: 10px;
+         }
          }
          .videoTime {
             position: absolute;
