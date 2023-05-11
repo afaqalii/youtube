@@ -25,7 +25,6 @@ const FeedSection = () => {
         setErr(true) 
       })
   },[category])
-  console.log(sidebarItemClicked)
   const RenderFeed = feed?.contents?.map((video, index) => {
     return (
       <VideoCard video={video?.video} key={index}/>
