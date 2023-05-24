@@ -34,7 +34,7 @@ const SearchResults = () => {
       ? <SideBar/>
       : <></>
     }
-    <div className='searchResultsContainer'>
+    <div style={{alignItems:`${loading ? 'center': 'normal'}`}} className='searchResultsContainer'>
       {
         Err 
         ? <PageNotFound/>
